@@ -4,6 +4,7 @@ import type { HydratedDocument } from 'mongoose';
 export class ProductCharacteristic {
     @Prop()
     name: string;
+
     @Prop()
     value: string;
 }
@@ -50,9 +51,10 @@ export class ProductsModel {
     @Prop({ type: () => [ProductCharacteristic] })
     characteristics: ProductCharacteristic[];
 
-    @Prop()
+    @Prop({ default: new Date() })
     createdAt: Date;
-    @Prop()
+
+    @Prop({ default: new Date() })
     updatedAt: Date;
 }
 

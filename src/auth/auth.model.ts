@@ -6,17 +6,15 @@ export type AuthDocument = HydratedDocument<AuthModel>;
 @Schema()
 export class AuthModel {
     @Prop()
-    _id: string;
-
-    @Prop()
     email: string;
 
     @Prop()
     passwordHash: string;
 
-    @Prop()
+    @Prop({ default: new Date() })
     createdAt: Date;
-    @Prop()
+
+    @Prop({ default: new Date() })
     updatedAt: Date;
 }
 

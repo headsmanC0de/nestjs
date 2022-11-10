@@ -10,10 +10,10 @@ export class ProductsController {
     @Get(':id')
     async get(@Param('id') id: string) {}
 
-    @Delete('id')
+    @Delete(':id')
     async delete(@Param('id') id: string) {}
 
-    @Patch('id')
+    @Patch(':id')
     async patch(@Param('id') id: string, @Body() dto: ProductsModel) {}
 
     @HttpCode(200)

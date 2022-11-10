@@ -4,6 +4,7 @@ import type { PagesModel } from './pages.model';
 
 @Controller('pages')
 export class PagesController {
+
     @Post('create')
     async create(@Body() dto: Omit<PagesModel, '_id'>) {}
 
@@ -13,7 +14,7 @@ export class PagesController {
     @Delete('id')
     async delete(@Param('id') id: string) {}
 
-    @Patch('id')
+    @Patch(':id')
     async patch(@Param('id') id: string, @Body() dto: PagesModel) {}
 
     @HttpCode(200)
