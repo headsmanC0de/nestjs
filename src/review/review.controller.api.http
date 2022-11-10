@@ -14,5 +14,5 @@ content-type: application/json
 DELETE http://localhost:3000/api/review/:id
 
 
-### $Get: [/api/review/byProduct/:productId] - Кeturns an array with found products.
+### $Get: [/api/review/byProduct/:productId] - Returns an array with found products.
 DELETE http://localhost:3000/api/review/byProduct/:productId
