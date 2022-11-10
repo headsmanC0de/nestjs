@@ -1,0 +1,14 @@
+### $Post: [/api/review/create] - Create review.
+POST http://localhost:3000/api/review/create
+content-type: application/json
+
+{
+	"name": "Test_Name",
+	"title": "test_Title",
+	"description": "test desc",
+	"rating": 5
+}
+
+
+### $Delete: [/api/review/:id] - Delete review by id.
+DELETE http://localhost:3000/api/review/636d216c0f6f9e911854d3b6

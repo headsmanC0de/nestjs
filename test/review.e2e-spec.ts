@@ -9,8 +9,8 @@ import type { INestApplication } from '@nestjs/common';
 const productId = new Types.ObjectId().toHexString();
 
 const testDto: CreateReviewDto = {
-    name: 'fuff',
-    title: 'test',
+    name: 'Test_Name',
+    title: 'test_Title',
     description: 'test desc',
     rating: 5,
     productId,
