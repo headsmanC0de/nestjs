@@ -40,24 +40,23 @@ describe('AppController (e2e)', () => {
             });
     });
 
-    // it('/review/byProduct/:productId (GET) - success', async () => {
-    //     return request(app.getHttpServer())
-    //         .get('/review/byProduct/' + productId)
-    //         .expect(200)
-    //         .then(({ body }: request.Response) => {
-    //             console.log(body);
-    //             expect(body.length).toBe(1);
-    //         });
-    // });
+    it('/review/byProduct/:productId (GET) - success', async () => {
+        return request(app.getHttpServer())
+            .get('/review/byProduct/' + productId)
+            .expect(200)
+            .then(({ body }: request.Response) => {
+                expect(body.length).toBe(1);
+            });
+    });
 
-    // it('/review/byProduct/:productId (GET) - fail', async () => {
-    //     return request(app.getHttpServer())
-    //         .get('/review/byProduct/' + new Types.ObjectId().toHexString())
-    //         .expect(200)
-    //         .then(({ body }: request.Response) => {
-    //             expect(body.length).toBe(0);
-    //         });
-    // });
+    it('/review/byProduct/:productId (GET) - fail', async () => {
+        return request(app.getHttpServer())
+            .get('/review/byProduct/' + new Types.ObjectId().toHexString())
+            .expect(200)
+            .then(({ body }: request.Response) => {
+                expect(body.length).toBe(0);
+            });
+    });
 
     it('/review/:id (DELETE) - success', () => {
         return request(app.getHttpServer())

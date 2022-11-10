@@ -25,7 +25,7 @@ export class HhData {
 export class PageAdvantage {
     @Prop()
     title: string;
-	
+
     @Prop()
     description: string;
 }
@@ -34,9 +34,6 @@ export type PagesModelDocument = HydratedDocument<PagesModel>;
 
 @Schema()
 export class PagesModel {
-    @Prop()
-    _id: string;
-
     @Prop({ enum: PagesCategory })
     firstCategory: PagesCategory;
 

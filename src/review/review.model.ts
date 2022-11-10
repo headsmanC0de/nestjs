@@ -3,7 +3,8 @@ import mongoose, { HydratedDocument, Mongoose, Types } from 'mongoose';
 
 export type ReviewsDocument = HydratedDocument<ReviewsModel>;
 
-@Schema()
+// @Schema({ versionKey: false }) - For disable -v (Version doc)
+@Schema({ versionKey: false })
 export class ReviewsModel {
     @Prop()
     name: string;
