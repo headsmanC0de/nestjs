@@ -11,4 +11,4 @@ content-type: application/json
 
 
 ### $Delete: [/api/review/:id] - Delete review by id.
-DELETE http://localhost:3000/api/review/636d216c0f6f9e911854d3b6
+DELETE http://localhost:3000/api/review/:id
