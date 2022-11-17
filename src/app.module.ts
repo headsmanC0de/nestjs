@@ -23,7 +23,7 @@ import { ReviewModule } from './review/review.module';
         ProductsModule,
         ReviewModule,
     ],
-    controllers: [AppController, AuthController],
+    controllers: [AppController],
     providers: [AppService],
 })
 export class AppModule {}

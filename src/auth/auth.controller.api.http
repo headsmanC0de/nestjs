@@ -1,0 +1,18 @@
+### $Post: [/api/auth/register] - Register new user.
+POST http://localhost:3000/api/auth/register
+content-type: application/json
+
+{
+	"login": "somedude@dudes.com",
+	"password": "1"
+}
+
+
+### $Post: [/api/review/:id] - Login user.
+POST  http://localhost:3000/api/auth/login
+content-type: application/json
+
+{
+	"login": "somedude@dudes.com",
+	"password": "1"
+}
