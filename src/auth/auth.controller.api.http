@@ -4,7 +4,7 @@ content-type: application/json
 
 {
 	"login": "somedude@dudes.com",
-	"password": "1"
+	"password": "somePassword"
 }
 
 
@@ -14,5 +14,5 @@ content-type: application/json
 
 {
 	"login": "somedude@dudes.com",
-	"password": "1"
+	"password": "somePassword1"
 }

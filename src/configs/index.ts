@@ -1,2 +1,2 @@
 export { getMongoConfig } from './mongo.config';
-export { getJWTconfig } from './jwt.config';
+export { getJWTConfig } from './jwt.config';
