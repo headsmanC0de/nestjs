@@ -8,6 +8,7 @@ export class ProductCharacteristic {
     @Prop()
     value: string;
 }
+
 export type ProductsModelDocument = HydratedDocument<ProductsModel>;
 
 @Schema()
@@ -22,13 +23,10 @@ export class ProductsModel {
     price: number;
 
     @Prop()
-    oldPrice: number;
+    oldPrice?: number;
 
     @Prop()
     credit: number;
-
-    @Prop()
-    calculatedRating: number;
 
     @Prop()
     description: string;

@@ -15,4 +15,8 @@ DELETE http://localhost:3000/api/review/:id
 
 
 ### $Get: [/api/review/byProduct/:productId] - Returns an array with found products.
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNvbWVkdWRlQGR1ZGVzLmNvbSIsImlhdCI6MTY2ODc4NjU0N30.4pBn_HJjaWyVk5yOuDHk5PKWZLiOmywFFpwibA6QRds
+
 GET  http://localhost:3000/api/review/byProduct/603c9d5ffa373014e6cd3ed2
+{ }

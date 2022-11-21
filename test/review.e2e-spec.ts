@@ -5,8 +5,14 @@ import { Types, disconnect } from 'mongoose';
 import { REVIEW_NOT_FOUND } from '../src/review/review.constants';
 import type { CreateReviewDto } from 'src/review/dto/create-review.dto';
 import type { INestApplication } from '@nestjs/common';
+import type { AuthDto } from './../src/auth/dto/auth.dto';
 
 const productId = new Types.ObjectId().toHexString();
+
+const loginDto: AuthDto = {
+    login: 'somedude@dudes.com',
+    password: 'somePassword',
+};
 
 const testDto: CreateReviewDto = {
     name: 'Test_Name',
@@ -19,6 +25,7 @@ const testDto: CreateReviewDto = {
 describe('AppController (e2e)', () => {
     let app: INestApplication;
     let createdId: string;
+    let token: string;
 
     beforeEach(async () => {
         const moduleFixture: TestingModule = await Test.createTestingModule({
@@ -27,6 +34,9 @@ describe('AppController (e2e)', () => {
 
         app = moduleFixture.createNestApplication();
         await app.init();
+
+        const { body } = await request(app.getHttpServer()).post('/auth/login').send(loginDto);
+        token = body.access_token;
     });
 
     it('/review/create (POST) - success', async () => {
@@ -46,7 +56,7 @@ describe('AppController (e2e)', () => {
             .send({ ...testDto, rating: 0 })
             .expect(400)
             .then(({ body }: request.Response) => {
-                console.log(body);
+                // console.log(body);
             });
     });
 
@@ -71,12 +81,14 @@ describe('AppController (e2e)', () => {
     it('/review/:id (DELETE) - success', () => {
         return request(app.getHttpServer())
             .delete('/review/' + createdId)
+            .set('Authorization', 'Bearer ' + token)
             .expect(200);
     });
 
     it('/review/:id (DELETE) - fail', () => {
         return request(app.getHttpServer())
             .delete('/review/' + new Types.ObjectId().toHexString())
+            .set('Authorization', 'Bearer ' + token)
             .expect(404, {
                 statusCode: 404,
                 message: REVIEW_NOT_FOUND,

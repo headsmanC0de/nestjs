@@ -14,5 +14,5 @@ content-type: application/json
 
 {
 	"login": "somedude@dudes.com",
-	"password": "somePassword1"
+	"password": "somePassword"
 }
