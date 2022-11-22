@@ -20,7 +20,7 @@ export class ReviewService {
 
     async findByProductId(productId: string): Promise<ReviewsDocument[]> {
         return this.reviewsModel
-            .find({ productId: new Types.ObjectId(productId).toHexString() })
+            .find({ productId: new Types.ObjectId(productId) })
             .exec();
     }
 

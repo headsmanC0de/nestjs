@@ -21,7 +21,7 @@ import { REVIEW_NOT_FOUND } from './review.constants';
 export class ReviewController {
     constructor(private readonly reviewService: ReviewService) {}
 
-    @UsePipes(new ValidationPipe())
+    @UsePipes(new ValidationPipe({ whitelist: true })) // Options excludes data that is not included
     @Post('create')
     async create(@Body() dto: CreateReviewDto) {
         return this.reviewService.create(dto);
@@ -38,7 +38,6 @@ export class ReviewController {
 
     @Get('byProduct/:productId')
     async getByProduct(@Param('productId') productId: string, @UserEmail() email: string) {
-        console.log(email);
         return this.reviewService.findByProductId(productId);
     }
 }

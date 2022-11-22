@@ -46,7 +46,7 @@ export class ProductsService {
                 },
                 {
                     $lookup: {
-                        from: 'Review',
+                        from: 'review',
                         localField: '_id',
                         foreignField: 'productId',
                         as: 'reviews',
@@ -61,6 +61,6 @@ export class ProductsService {
             ])
             .exec() as Promise<
             (ProductsModel & { review: ReviewsModel[]; reviewCount: number; reviewAvg: number })[]
-        >;
+        		>;
     }
 }
