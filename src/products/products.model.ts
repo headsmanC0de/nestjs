@@ -11,7 +11,8 @@ export class ProductCharacteristic {
 
 export type ProductsModelDocument = HydratedDocument<ProductsModel>;
 
-@Schema()
+// @Schema()
+@Schema({ timestamps: true })
 export class ProductsModel {
     @Prop()
     image: string;
@@ -46,11 +47,11 @@ export class ProductsModel {
     @Prop({ type: () => [ProductCharacteristic] })
     characteristics: ProductCharacteristic[];
 
-    @Prop({ default: new Date() })
-    createdAt: Date;
+    // @Prop({ default: new Date() })
+    // createdAt: Date;
 
-    @Prop({ default: new Date() })
-    updatedAt: Date;
+    // @Prop({ default: new Date() })
+    // updatedAt: Date;
 }
 
 export const ProductsSchema = SchemaFactory.createForClass(ProductsModel);

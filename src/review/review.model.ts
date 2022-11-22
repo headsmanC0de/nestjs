@@ -4,7 +4,7 @@ import { HydratedDocument, Types } from 'mongoose';
 export type ReviewsDocument = HydratedDocument<ReviewsModel>;
 
 // @Schema({ versionKey: false }) - For disable -v (Version doc)
-@Schema({ versionKey: false })
+@Schema({ versionKey: false, timestamps: true })
 export class ReviewsModel {
     @Prop()
     name: string;
@@ -21,11 +21,11 @@ export class ReviewsModel {
     @Prop()
     productId: Types.ObjectId;
 
-    @Prop({ default: new Date() })
-    createdAt: Date;
+    // @Prop({ default: new Date() })
+    // createdAt: Date;
 
-    @Prop({ default: new Date() })
-    updateAt: Date;
+    // @Prop({ default: new Date() })
+    // updateAt: Date;
 }
 
 export const ReviewsSchema = SchemaFactory.createForClass(ReviewsModel);

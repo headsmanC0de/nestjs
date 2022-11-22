@@ -10,6 +10,7 @@ export class ProductCharacteristicDto {
 }
 
 export class CreateProductDto {
+    @IsString()
     image: string;
 
     @IsString()
@@ -43,9 +44,6 @@ export class CreateProductDto {
 
     @IsArray()
     @ValidateNested()
-    @Type(()=> ProductCharacteristicDto)
+    @Type(() => ProductCharacteristicDto)
     characteristics: ProductCharacteristicDto[];
-
-    createdAt: Date;
-    updatedAt: Date;
 }
