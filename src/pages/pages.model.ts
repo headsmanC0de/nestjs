@@ -30,9 +30,9 @@ export class PageAdvantage {
     description: string;
 }
 
-export type PagesModelDocument = HydratedDocument<PagesModel>;
+export type PagesDocument = HydratedDocument<PagesModel>;
 
-@Schema()
+@Schema({ timestamps: true, versionKey: false })
 export class PagesModel {
     @Prop({ enum: PagesCategory })
     firstCategory: PagesCategory;
